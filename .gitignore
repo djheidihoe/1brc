@@ -44,6 +44,8 @@ out/
 
 # 1BRC
 /measurements*.txt
+/measurements.txt
+data/
 /*.out
 out_expected.txt
 /*-timing.json
