@@ -1,0 +1,30 @@
+ hyperfine 'pypy3 keep_bytes.py' 'pypy3 strip_split_bytes.py 'pypy3 simplify_parse.py' 'pypy3 multicore.py'
+^[[201~' pypy3 simplify_parse.py' 'pypy3 multicore.py'
+^[[201~'pypy3 simplify_parse.py 'pypy3 multicore.py'
+^[[201~' 'pypy3 multicore.py
+^[[201~'                       'pypy3 keep_bytes.py' 'pypy3 strip_split_bytes.py' 'pypy3 simplify_parse.py' 'pypy3 multicore.py'
+
+Benchmark 1: pypy3 keep_bytes.py
+  Time (mean ± σ):     1496.499 s ± 32.823 s    [User: 509.868 s, System: 245.112 s]
+  Range (min … max):   1467.939 s … 1574.333 s    10 runs
+
+Benchmark 2: pypy3 strip_split_bytes.py
+  Time (mean ± σ):     104.279 s ±  9.102 s    [User: 99.265 s, System: 2.290 s]
+  Range (min … max):   101.114 s … 130.177 s    10 runs
+
+  Warning: The first benchmarking run for this command was significantly slower than the rest (130.177 s). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+
+Benchmark 3: pypy3 simplify_parse.py
+  Time (mean ± σ):     103.005 s ±  0.286 s    [User: 100.804 s, System: 2.198 s]
+  Range (min … max):   102.503 s … 103.458 s    10 runs
+
+Benchmark 4: pypy3 multicore.py
+  Time (mean ± σ):     18.682 s ±  0.241 s    [User: 208.951 s, System: 1.702 s]
+  Range (min … max):   18.119 s … 19.013 s    10 runs
+
+Summary
+  pypy3 multicore.py ran
+    5.51 ± 0.07 times faster than pypy3 simplify_parse.py
+    5.58 ± 0.49 times faster than pypy3 strip_split_bytes.py
+   80.10 ± 2.04 times faster than pypy3 keep_bytes.py
+
