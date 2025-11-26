@@ -1,0 +1,13 @@
+[package]
+name = "fast_1brc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+memmap2 = "0.9"
+rayon = "1.10"
+memchr = "2.7"
+ahash = "0.8"
+dashmap = "5.5"
+parking_lot = "0.12"
+
