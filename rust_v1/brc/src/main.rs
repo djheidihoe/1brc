@@ -6,7 +6,7 @@ use std::sync::Arc;
 
 use ahash::AHashMap;
 use dashmap::DashMap;
-use memchr::{memchr, memchr_iter};
+use memchr::memchr;
 use memmap2::Mmap;
 use rayon::prelude::*;
 
@@ -126,7 +126,7 @@ fn main() -> io::Result<()> {
 
     // --- merge locals into a dense Vec<Stat> indexed by city ID ---
     let max_id = interner.next_id.load(Ordering::Relaxed) as usize;
-    let mut global: Vec<Stat> = vec![Stat::default(); max_id];
+    let mut global: Vec<Stat> = vec![Stat::default(); max_id + 1];
     for local in locals {
         for (id, st) in local {
             let g = &mut global[id as usize];
