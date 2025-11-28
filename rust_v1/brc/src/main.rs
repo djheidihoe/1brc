@@ -20,7 +20,8 @@ struct Stat {
 
 // Interner: assigns a compact u32 ID to each unique city string.
 // Stores names in a Vec<String> and exposes a concurrent map for lookup.
-// We only allocate a String once per unique city.
+// We only allocate a String once per 
+// unique city.
 struct Interner {
     next_id: AtomicU32,
     name_by_id: parking_lot::RwLock<Vec<String>>,
